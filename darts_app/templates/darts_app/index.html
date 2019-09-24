@@ -1,7 +1,7 @@
 {% if latest_question_list %}
     <ul>
         {% for question in latest_question_list %}
-            <li><a href="/darts_app/{{question_id}}/">{{ question.text }}</a></li>
+            <li><a href="{% url 'darts_app:detail' question.id %}">{{ question.text }}</a></li>
         {% endfor %}
     </ul>
 {% else %}
