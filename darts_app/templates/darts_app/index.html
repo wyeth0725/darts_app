@@ -1,7 +1,7 @@
-{% if latest_question_list %}
+{% if user_list %}
     <ul>
-        {% for question in latest_question_list %}
-            <li><a href="{% url 'darts_app:detail' question.id %}">{{ question.text }}</a></li>
+        {% for user in user_list %}
+            <li>{{ user.all }}</a></li>
         {% endfor %}
     </ul>
 {% else %}

@@ -3,14 +3,15 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import get_object_or_404
 from django.shortcuts import render
 
-from .models import Question
+from .models import User
+
 
 def index(request):
     #order by の引数の前に-つけるとdescになる
-    latest_question_list = Question.objects.all().order_by("-publish_date")[:5]
-    context = {"latest_question_list": latest_question_list}
+    user_list = User.objects.all().order_by("-register_date")[:5]
+    context = {"user_list": user_list}
     return render(request, "darts_app/index.html", context)
-
+"""
 def detail(request, question_id):
     question = get_object_or_404(Question, pk=question_id)
     return render(request, "darts_app/detail.html", {"question": question})
@@ -29,3 +30,4 @@ def vote(request, question_id):
         selected_choice.votes += 1
         selected_choice.save()
         return HttpResponseRedirect(reverse("darts_app:results", args=(question.id)))
+"""
