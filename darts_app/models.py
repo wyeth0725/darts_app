@@ -17,5 +17,5 @@ class Score(models.Model):
     register_date = models.DateTimeField("date registered")
 
     def __str__(self):
-        return self.user_id
+        return str(self.score)
     

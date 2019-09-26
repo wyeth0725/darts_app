@@ -1,0 +1,12 @@
+<h1>Register page.</h1>
+{% if error_message %}
+    <p><strong>{{ error_message }}</strong></p>
+{% endif %}
+
+<form action="{% url 'darts_app:register_result' %}" method="POST">
+    {% csrf_token %}
+    <label>User name: </label>
+    <input type="text" name="input_name" value="user_name">
+    <input type="submit" name="submit_user_name" value="submit">
+</form>
+

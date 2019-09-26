@@ -7,10 +7,22 @@ from .models import User
 
 
 def index(request):
-    #order by の引数の前に-つけるとdescになる
     user_list = User.objects.all().order_by("-register_date")[:5]
     context = {"user_list": user_list}
     return render(request, "darts_app/index.html", context)
+
+def register_user(request):
+    if request.method == "POST":
+        f = register_result(request.POST)
+    else:
+        f = register_result()
+    context = {"user_name", f}
+    return render(request, "darts_app/register_user.html", context)
+
+def register_result(request, user_name):
+
+    return render(request, "darts_app/register_result.html")
+
 """
 def detail(request, question_id):
     question = get_object_or_404(Question, pk=question_id)

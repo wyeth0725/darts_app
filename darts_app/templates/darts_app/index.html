@@ -1,9 +1,2 @@
-{% if user_list %}
-    <ul>
-        {% for user in user_list %}
-            <li>{{ user.all }}</a></li>
-        {% endfor %}
-    </ul>
-{% else %}
-    <p>No rows are available</p>
-{% endif %}
+<p><strong>DARTS APP TOP PAGE</strong></p>
+<a href="{% url 'darts_app:register_user' %}">Register</a>
