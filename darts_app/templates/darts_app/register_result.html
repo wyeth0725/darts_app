@@ -1,1 +1,8 @@
-<h1>Register Success!</h1>>
+<!doctype html>
+{% if error_message %}
+    <p><strong>{{ error_message }}</strong></p>
+{% else %}
+    <h1>Register Success!</h1>
+    <h2>{{ error_message }}</h2>
+{% endif %}
+<p><a href = "{% url 'darts_app:index' %}">back to top</a></p>

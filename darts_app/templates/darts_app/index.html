@@ -1,2 +1,6 @@
+<!doctype html>
+{% if error_message %}
+    <p><strong>{{ error_message }}</strong></p>
+{% endif %}
 <p><strong>DARTS APP TOP PAGE</strong></p>
 <a href="{% url 'darts_app:register_user' %}">Register</a>
